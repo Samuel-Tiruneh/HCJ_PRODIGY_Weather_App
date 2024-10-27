@@ -1,0 +1,149 @@
+/* Base styles */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(to right, #56ccf2, #2f80ed);
+  color: white;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.container {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+input {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  margin: 0.5rem 0;
+  width: 80%;
+  max-width: 300px;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  background: #ffb43a;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin: 0.5rem;
+}
+
+button:hover {
+  background: #ff9e1c;
+}
+
+#weatherInfo {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+}
+
+.outer-container {
+  text-align: center;
+}
+
+#ticker-container {
+  width: 100%;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+#commonCitiesWeather {
+  display: inline-block;
+  white-space: nowrap;
+  animation: ticker 30s linear infinite;
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Media query for screens greater than 480px */
+@media screen and (min-width: 481px) {
+  body {
+    display: flex;
+    height: 100vh;
+  }
+
+  .container {
+    padding: 2rem;
+  }
+
+  input {
+    width: 80%;
+    max-width: 300px;
+  }
+
+  button {
+    width: auto;
+  }
+
+  #ticker-container {
+    padding: 1rem;
+  }
+
+  #commonCitiesWeather {
+    font-size: 1rem;
+  }
+}
+
+.weather-title {
+  color: #ffb43a; 
+  font-weight: bold; 
+}
+
+
+
+/* Media query for small screens */
+@media screen and (max-width: 480px) {
+  body {
+    display: block;
+    height: auto;
+  }
+
+  .container {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  input {
+    width: 100%;
+    max-width: none;
+  }
+
+  button {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  #ticker-container {
+    padding: 0.5rem;
+  }
+
+  #commonCitiesWeather {
+    font-size: 0.8rem;
+  }
+}
